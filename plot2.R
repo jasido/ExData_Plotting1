@@ -30,6 +30,7 @@ df <- read_delim_chunked("exdata_data_household_power_consumption/household_powe
   na = "?"
 )
 
+
 # Wrangle data---------------------------------------------------------------------------------------------
 
 df <- df %>%
@@ -58,3 +59,4 @@ with(df, plot(date, Global_active_power,
 
 # Shutdown connection to png
 dev.off()
+
