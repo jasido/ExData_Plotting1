@@ -64,9 +64,9 @@ plot(df$date, df$value,
 )
 
 # Subset df for each energy sub-metering
-submeter1 <- subset(a, key == "Sub_metering_1")
-submeter2 <- subset(a, key == "Sub_metering_2")
-submeter3 <- subset(a, key == "Sub_metering_3")
+submeter1 <- subset(df, key == "Sub_metering_1")
+submeter2 <- subset(df, key == "Sub_metering_2")
+submeter3 <- subset(df, key == "Sub_metering_3")
 
 # Generate line plots with each subset on their respective colors
 with(submeter1, lines(date, value, col = "black"))
