@@ -7,13 +7,14 @@
 
 ### Also, rather than reading the entire data set and subsetting to the required dates, read_delim_chunked
 ### from readr package is used to efficiently read only the data that is needed.
-### Tidyverse is a collection of packages which includes readr, dplyr, tidyr, lubridate etc.
+### Tidyverse is a collection of packages which includes readr, dplyr, tidyr etc.
 
 
 # Load data------------------------------------------------------------------------------------------------
 
-# Load necessary package
+# Load necessary packages
 library(tidyverse)
+library(lubridate)
 
 # Create a function to subset data only on the desired dates
 f <- function(x, pos) {
