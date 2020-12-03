@@ -49,3 +49,4 @@ hist(df$Global_active_power,
 
 # Shut down connection to png
 dev.off()
+
