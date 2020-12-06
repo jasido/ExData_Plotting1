@@ -87,6 +87,21 @@ plot(df_other$date,
 )
 
 # Plot date vs Energy sub metering
+
+# # The ff produces the same output with less code.
+# # On second thought, gathering columns really are unnecessary.
+# # I initially thought col = <some factor variable> would work
+# # with base's plot() function.
+# 
+# plot(df$date, df$Sub_metering_1,
+#   type = "l",
+#   col = "black",
+#   xlab = "",
+#   ylab = "Energy sub metering"
+# )
+# lines(df$date, df$Sub_metering_2, col = "red")
+# lines(df$date, df$Sub_metering_3, col = "blue")
+
 with(df_energy, {
   # Create a blank canvas with labels
   plot(df_energy$date, df_energy$value,
