@@ -40,7 +40,7 @@ df <- df %>%
   # parse date as datetime object
   mutate(date = dmy_hms(date)) %>%
   # select desired columns
-  select(date, Sub_metering_1, Sub_metering_2, Sub_metering_3) %>%
+  select(date, Sub_metering_1, Sub_metering_2, Sub_metering_3)  %>%
   # Gather submetering columns into one column
   gather(
     key = "key", value = "value",
@@ -74,6 +74,20 @@ with(submeter1, lines(date, value, col = "black"))
 with(submeter2, lines(date, value, col = "red"))
 with(submeter3, lines(date, value, col = "blue"))
 
+# # The ff produces the same output with less code.
+# # On second thought, gathering columns really are unnecessary.
+# # I initially thought col = <some factor variable> would work
+# # with base's plot() function.
+# 
+# plot(df$date, df$Sub_metering_1,
+#   type = "l",
+#   col = "black",
+#   xlab = "",
+#   ylab = "Energy sub metering"
+# )
+# lines(df$date, df$Sub_metering_2, col = "red")
+# lines(df$date, df$Sub_metering_3, col = "blue")
+
 # Add legend
 legend("topright",
   lty = 1,
@@ -88,4 +102,3 @@ legend("topright",
 
 # Shutdown connection to png
 dev.off()
-
